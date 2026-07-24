@@ -1,0 +1,34 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import Link from '../components/Link.astro';
+import DashboardLayout from '../layouts/DashboardLayout.astro';
+import PageLayout from '../layouts/PageLayout.astro';
+
+export async function getStaticPaths() {
+    const pages = await getCollection('pages');
+    return pages.map((page) => {
+        const segments = page.id === 'index' ? undefined : page.id;
+        return {
+            params: { id: segments },
+            props: { page }
+        };
+    });
+}
+
+type Props = { page: CollectionEntry<'pages'> };
+
+const { page } = Astro.props;
+const { title, seo, image, showHeader, iframeSrc, iframeWidth, iframeHeight, iframeScale } = page.data;
+const { Content } = await render(page);
+---
+
+{iframeSrc ? (
+    <DashboardLayout title={title} iframeSrc={iframeSrc}
+        iframeWidth={iframeWidth} iframeHeight={iframeHeight} iframeScale={iframeScale}>
+        <Content components={{ a: Link }} />
+    </DashboardLayout>
+) : (
+    <PageLayout title={title} seo={seo} image={image} showHeader={showHeader}>
+        <Content components={{ a: Link }} />
+    </PageLayout>
+)}

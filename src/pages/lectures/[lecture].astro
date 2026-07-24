@@ -1,0 +1,28 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import Link from '../../components/Link.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
+
+export async function getStaticPaths() {
+    const lectures = await getCollection('lectures');
+
+    return lectures.map((lecture) => ({
+        params: { lecture: lecture.id },
+        props: {
+            lecture
+        }
+    }));
+}
+
+type Props = {
+    lecture: CollectionEntry<'lectures'>;
+};
+
+const { lecture } = Astro.props;
+const { title, seo } = lecture.data;
+const { Content } = await render(lecture);
+---
+
+<PageLayout title={title} seo={seo} showHeader={false}>
+    <Content components={{ a: Link }} />
+</PageLayout>

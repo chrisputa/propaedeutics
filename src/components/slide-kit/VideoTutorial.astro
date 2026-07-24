@@ -1,0 +1,39 @@
+---
+const { 
+  src,
+  id = `video-${Math.random().toString(36).substr(2, 9)}`,
+  ratio = '16/9',
+  autoplay = false,
+  button_color = 'black',
+  class: className = '',
+} = Astro.props;
+---
+
+<figure class={`not-prose my-4 ${className}`}>
+
+  <div class="relative w-full" style=`aspect-ratio: ${ratio};`>
+    <video
+      id={id}
+      src={src}
+      class="w-full h-auto"
+      muted
+      playsinline
+      autoplay={autoplay}
+      loop
+    ></video>
+
+    <!-- Play/Pause Button -->
+    <button
+      onclick={`
+        const v = document.getElementById('${id}');
+        if(v.paused) { v.play(); this.textContent='⏸'; } 
+        else { v.pause(); this.textContent='▶'; }
+      `}
+      class="absolute bottom-4 left-4 bg-black/0 text-black p-2 rounded font-mono text-2xl"
+      style={`color: ${button_color}; background-color: rgba(128,128,128,0.5);`}
+    >
+      {autoplay ? '⏸' : '▶'}
+    </button>
+  </div>
+  
+</figure>

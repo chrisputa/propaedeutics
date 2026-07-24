@@ -1,0 +1,116 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+
+export interface Props {
+  title: string;
+  iframeSrc: string;
+  showHeader?: boolean;
+  iframeWidth?: number;
+  iframeHeight?: number;
+  iframeScale?: number;
+}
+
+const { title, iframeSrc, showHeader = false, iframeWidth, iframeHeight, iframeScale = 1 } = Astro.props;
+const resolvedSrc = iframeSrc.startsWith('/') || /^https?:/.test(iframeSrc)
+  ? iframeSrc
+  : `${import.meta.env.BASE_URL}${iframeSrc}`;
+const hasFixedSize = iframeWidth !== undefined && iframeHeight !== undefined;
+const scaledWidth  = hasFixedSize ? Math.round(iframeWidth! * iframeScale) : null;
+const scaledHeight = hasFixedSize ? Math.round(iframeHeight! * iframeScale) : null;
+---
+
+<!doctype html>
+<html lang="en" class="antialiased break-words">
+  <head>
+    <BaseHead title={title} />
+  </head>
+  <body class="bg-main text-main sm:px-14">
+    <div class="flex flex-col min-h-screen px-4 md:px-8">
+      <Nav />
+      <main class="grow w-full max-w-5xl mx-auto">
+        <article>
+          <header class="mb-8">
+            <h1 class="text-3xl leading-tight font-display font-normal tracking-[0.005em] sm:text-[2.625rem] sm:leading-tight">{title}</h1>
+          </header>
+
+          {hasFixedSize ? (
+            /* ── Fixed size ── */
+            <div style={`width: ${scaledWidth}px; height: ${scaledHeight}px; overflow: hidden;`}>
+              <iframe
+                src={resolvedSrc}
+                width={iframeWidth}
+                height={iframeHeight}
+                style={`transform: scale(${iframeScale}); transform-origin: top left; border: none; display: block;`}
+                scrolling="no"
+                title={title}
+              />
+            </div>
+          ) : (
+            /* ── Dynamic size ── */
+            <iframe
+              id="dynamic-iframe"
+              src={resolvedSrc}
+              scrolling="no"
+              style="width: 100%; height: 200px; border: none; display: block; overflow: hidden; transition: height 0.15s ease;"
+              title={title}
+            />
+          )}
+
+          <div class="prose prose-lg mt-8" style="width: 100%; max-width: none;">
+            <slot />
+          </div>
+        </article>
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>
+
+{!hasFixedSize && (
+  <script>
+    (function () {
+      const iframe = document.getElementById('dynamic-iframe') as HTMLIFrameElement | null;
+      if (!iframe) return;
+
+      // ── Method 1: postMessage from widget ───
+      // HTML-Widget must contain this snippet:
+      //
+      //   const ro = new ResizeObserver(entries => {
+      //     const h = entries[0].contentRect.height;
+      //     window.parent.postMessage({ type: 'iframeResize', height: h }, '*');
+      //   });
+      //   ro.observe(document.documentElement);
+      //
+      window.addEventListener('message', (event) => {
+        if (
+          event.data &&
+          event.data.type === 'iframeResize' &&
+          typeof event.data.height === 'number'
+        ) {
+          iframe.style.height = event.data.height + 'px';
+        }
+      });
+
+      // ── Method 2: Fallback – same-origin scrollHeight polling ───
+      iframe.addEventListener('load', () => {
+        try {
+          const doc = iframe.contentDocument || iframe.contentWindow?.document;
+          if (!doc) return;
+
+          const syncHeight = () => {
+            const h = doc.documentElement.scrollHeight || doc.body.scrollHeight;
+            if (h > 0) iframe.style.height = h + 'px';
+          };
+
+          syncHeight();
+
+          const ro = new ResizeObserver(syncHeight);
+          ro.observe(doc.documentElement);
+        } catch {
+        }
+      });
+    })();
+  </script>
+)}
