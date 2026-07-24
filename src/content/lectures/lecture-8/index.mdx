@@ -1,0 +1,176 @@
+---
+title: "2×2-Design & statistische Grundlagen"
+description: "Führt in Design und Statistik ein: den Aufbau eines 2×2-Designs (Haupteffekte und Interaktion), die vier Skalenniveaus mit Sportbeispielen sowie die Unterscheidung abhängiger und unabhängiger Stichproben. Erklärt die Grobstruktur teststatistischer Prüfverfahren für Unterschiedshypothesen und die Definition des Konfidenzintervalls."
+examRelevant: true
+draft: false
+---
+
+import Figure from '../../../components/Figure.astro';
+import Table from '../../../components/Table.astro';
+import fig1 from '../../../assets/Figure_11.png';
+import fig1Dark from '../../../assets/generated/Figure_11_dark.png';
+import { Note } from '../../../components/MarginNote/index.js';
+
+
+## Table of Contents
+
+1. [Das 2×2-Design](#1-das-2×2-design)
+2. [Skalenniveaus](#2-skalenniveaus)
+3. [Abhängige und unabhängige Stichproben](#3-abhängige-und-unabhängige-stichproben)
+4. [Grobstruktur statistischer Prüfverfahren](#4-grobstruktur-statistischer-prüfverfahren)
+
+---
+
+## 1 Das 2×2-Design
+
+<Note>
+**Lernziele:**
+- Aufbau und Datenstruktur eines 2×2-Designs
+- Faktoren und Faktorstufen
+</Note>
+
+### 1.1 Aufbau
+
+Ein **2×2-Design** ist ein faktorielles Design mit **zwei Faktoren zu je zwei Stufen**. Typisch in der Sport- und Trainingswissenschaft ist die Kombination aus einem **Gruppenfaktor** (z. B. Interventions- vs. Kontrollgruppe) und einem **Messwiederholungsfaktor** (z. B. Prä- vs. Post-Messung).
+
+*Schema eines 2×2-Designs (Gruppe × Zeit).*
+
+| | Prä (t₁) | Post (t₂) |
+| --- | --- | --- |
+| **Interventionsgruppe** | Zelle A | Zelle B |
+| **Kontrollgruppe** | Zelle C | Zelle D |
+
+*Schema eines 2×2-Designs (Gruppe × Zeit).*
+
+### 1.2 Was man aus dem Design lesen kann
+
+Ein 2×2-Design erlaubt die Betrachtung von zwei **Haupteffekten** (Wirkung des Gruppenfaktors, Wirkung des Zeitfaktors) und einer **Interaktion** (unterscheidet sich die zeitliche Veränderung zwischen den Gruppen?). Die Interaktion ist bei Interventionsstudien meist die eigentlich interessierende Größe: Sie zeigt, ob die Intervention über den reinen Zeitverlauf hinaus wirkt.
+
+---
+
+## 2 Skalenniveaus
+
+<Note>
+**Lernziele:**
+- Die vier Skalenniveaus mit Sportbeispielen
+- Stetige vs. diskrete Variablen
+</Note>
+
+### 2.1 Die vier Niveaus
+
+Skalenniveaus bestimmen, welche Rechen- und Auswertungsoperationen zulässig sind (nach Stevens, 1946; Güllich & Krüger, 2013):
+
+*Die vier Skalenniveaus mit Beispielen.*
+
+| Skalenniveau | Eigenschaft | Sport-Beispiel |
+| --- | --- | --- |
+| **Nominalskala** | Kategorisieren von Merkmalen/Objekten | Fußballer:innen, Handballer:innen, Individualsportler:innen |
+| **Ordinalskala** | Rangreihe mit Zahlen versehen | Ranglistenplatz Tennis, Medaillenspiegel Olympia |
+| **Intervallskala** | Konstante Abstände zwischen Skalenwerten | Jahreszahl, Temperatur, Sprintzeit in Sekunden |
+| **Verhältnisskala** | Konstante Abstände **und** absoluter Nullpunkt | Körpergewicht in kg, Sprintleistung in m/s |
+
+*Die vier Skalenniveaus mit Beispielen.*
+
+### 2.2 Stetig vs. diskret
+
+Zusätzlich unterscheidet man **kontinuierliche (stetige)** und **diskontinuierliche (diskrete)** Variablen: Bei stetigen Variablen (z. B. Sprungweite in Zentimeter) sind in jedem Intervall unendlich viele Ausprägungen möglich; bei diskreten Variablen (z. B. Liegestütze in 40 s) nur endlich viele.
+
+---
+
+## 3 Abhängige und unabhängige Stichproben
+
+<Note>
+**Lernziele:**
+- Abhängige vs. unabhängige Stichproben
+- Bezug zum 2×2-Design
+</Note>
+
+### 3.1 Definitionen
+
+- **Abhängige (verbundene) Stichproben** liegen vor, wenn sich jedem Wert der einen Stichprobe ein Wert der anderen zuordnen lässt — man hat es mit **Wertepaaren** zu tun, z. B. dieselbe Person zu zwei Zeitpunkten (Prä/Post) (Sedlmeier & Renkewitz, 2008).
+- **Unabhängige Stichproben** stammen aus zwei getrennten Populationen; die Werte der einen Stichprobe erlauben grob gesagt **keinerlei Vorhersage** über die Werte der anderen (z. B. Interventions- vs. Kontrollgruppe).
+
+### 3.2 Bezug zum Design
+
+Im 2×2-Design (Gruppe × Zeit) ist der **Zeitfaktor** typischerweise ein **Innersubjektfaktor** (abhängige Messungen: Prä/Post an denselben Personen), der **Gruppenfaktor** ein **Zwischensubjektfaktor** (unabhängige Stichproben). Diese Struktur bestimmt die Wahl des statistischen Verfahrens.
+
+---
+
+## 4 Grobstruktur statistischer Prüfverfahren
+
+<Note>
+**Lernziele:**
+- Grobstruktur teststatistischer Prüfverfahren
+- Verfahrensauswahl nach Hypothesentyp, Skalenniveau und Stichprobenstruktur
+</Note>
+
+### 4.1 Auswahl nach drei Kriterien
+
+Welches teststatistische Prüfverfahren geeignet ist, hängt vor allem von drei Fragen ab (Güllich & Krüger, 2013):
+
+1. **Welche Hypothesenform?** — Unterschieds-, Zusammenhangs- oder Veränderungshypothese (vgl. Vorlesung 7).
+2. **Welches Skalenniveau** hat die abhängige Variable?
+3. **Welche Stichprobenstruktur** — abhängige oder unabhängige Stichproben, wie viele Gruppen?
+
+<Figure src={fig1} srcDark={fig1Dark} alt="Grobstruktur teststatistischer Prüfverfahren">
+Grobstruktur teststatistischer Prüfverfahren: Auswahl nach Hypothesenform, Anzahl Datensätze, Skalenniveau und Stichprobenstruktur (nach Güllich & Krüger, 2013).
+</Figure>
+
+### 4.2 Orientierung für Unterschiedshypothesen
+
+*Vereinfachte Orientierung für Unterschiedshypothesen bei zwei Gruppen (nach Güllich & Krüger, 2013).*
+
+| Skalenniveau AV | Unabhängige Stichproben | Abhängige Stichproben |
+| --- | --- | --- |
+| metrisch (Intervall/Verhältnis), normalverteilt | t-Test für unabhängige Stichproben | t-Test für abhängige Stichproben |
+| ordinal / nicht normalverteilt | Mann-Whitney-U-Test | Wilcoxon-Vorzeichen-Rang-Test |
+| nominal | Chi-Quadrat-Test | McNemar-Test |
+
+*Vereinfachte Orientierung für Unterschiedshypothesen bei zwei Gruppen (nach Güllich & Krüger, 2013).*
+
+Bei zwei Faktoren (wie im 2×2-Design) kommen entsprechend **Varianzanalysen (ANOVA)** mit Innersubjekt- und/oder Zwischensubjektfaktoren zum Einsatz, um Haupteffekte und Interaktion zu prüfen.
+
+> **Merksatz.** Erst **Hypothese und Design** festlegen (Vorlesung 7), dann **Skalenniveau und Stichprobenstruktur** bestimmen — daraus folgt das Verfahren. Nicht umgekehrt.
+
+### 4.3 Das Konfidenzintervall
+
+Ein **Konfidenzintervall (KI)** gibt einen Wertebereich an, der den unbekannten wahren Populationsparameter (z. B. eine mittlere Differenz) mit einer festgelegten Wahrscheinlichkeit — üblicherweise **95 %** — überdeckt. Anschaulich: Würde man die Studie sehr oft wiederholen, enthielten rund 95 % der so berechneten Intervalle den wahren Wert.
+
+Das KI liefert mehr Information als ein bloßer p-Wert, weil es zugleich **Effektgröße** und **Präzision** (Breite des Intervalls) zeigt:
+
+- Ein **schmales** KI spricht für eine präzise Schätzung (oft große Stichprobe).
+- Schließt das KI eines Unterschieds die **Null** ein, ist der Effekt statistisch nicht signifikant (α = 5 %).
+
+> **Beispiel aus einem systematischen Review.** Herbert & Gabriel (2002) berichten für die Reduktion des Muskelkaters 24 h nach dem Sport durch Dehnen lediglich **0,9 mm auf einer 100-mm-Skala (95 %-KI: −2,6 mm bis +4,4 mm)**. Da das Intervall die Null einschließt, ist der Effekt weder statistisch signifikant noch praktisch bedeutsam.
+
+*Interaktives Video zur Definition: https://www.youtube.com/watch?v=n7imtsbJROo*
+
+---
+
+## One-Minute-Paper Topics
+<Note>
+  Ein **One-Minute-Paper** ist ein kurzer, fokussierter Impuls, den Sie am Ende der Sitzung in etwa 60 Sekunden beantworten, um das Gelernte zu festigen. Formulieren Sie präzise und nutzen Sie die Terminologie dieser Sitzung.
+</Note>
+- Skizzieren Sie ein 2×2-Design für eine Trainingsstudie Ihrer Wahl und benennen Sie die beiden Faktoren.
+- Ordnen Sie „Ranglistenplatz", „Körpergewicht in kg" und „Sportart" den passenden Skalenniveaus zu.
+
+---
+
+## Prüfungsrelevante Fragen (S4)
+
+- Erklären Sie ein 2×2-Design und seine Datenstruktur.
+- Nennen und erläutern Sie die vier Skalenniveaus mit je einem Sportbeispiel.
+- Was bedeuten abhängige und unabhängige Stichproben?
+- Welche Arten von Studiendesigns existieren? (vgl. Vorlesung 5)
+- Erklären Sie die Grobstruktur teststatistischer Prüfverfahren für Unterschiedshypothesen (Güllich & Krüger, 2013, S. 35).
+- Wie ist ein Konfidenzintervall definiert?
+
+---
+
+## References
+
+- Stevens, S. S. (1946). On the theory of scales of measurement. *Science, 103*(2684), 677–680. doi:10.1126/science.103.2684.677
+- Güllich, A. & Krüger, M. (Hrsg.) (2013). *Sport: Das Lehrbuch für das Sportstudium.* Springer-Verlag. (insb. Kap. 2 und S. 35)
+- Sedlmeier, P. & Renkewitz, F. (2008). *Forschungsmethoden und Statistik in der Psychologie.* Pearson Studium, München.
+- Döring, N. & Bortz, J. (2016). *Forschungsmethoden und Evaluation in den Sozial- und Humanwissenschaften.* Springer.
+- Herbert, R. D. & Gabriel, M. (2002). Effects of stretching before and after exercising on muscle soreness and risk of injury: systematic review. *BMJ, 325*(7362), 468. doi:10.1136/bmj.325.7362.468 *(Beispiel für Konfidenzintervalle)*
