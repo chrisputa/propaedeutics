@@ -1,149 +1,128 @@
 ---
-title: "2×2-Design & statistische Grundlagen"
-description: "Führt in Design und Statistik ein: den Aufbau eines 2×2-Designs (Haupteffekte und Interaktion), die vier Skalenniveaus mit Sportbeispielen sowie die Unterscheidung abhängiger und unabhängiger Stichproben. Erklärt die Grobstruktur teststatistischer Prüfverfahren für Unterschiedshypothesen und die Definition des Konfidenzintervalls."
+title: "Die klassische wissenschaftliche Methode"
+description: "Entfaltet die klassische wissenschaftliche Methode als zyklisches Vorgehen von der Theorie über die Hypothese zur empirischen Prüfung. Unterscheidet Theorien und Hypothesen, gerichtete und ungerichtete sowie Unterschieds-, Zusammenhangs- und Veränderungshypothesen und klärt Operationalisierung, unabhängige/abhängige Variablen und den Design-Begriff (Versuchsplanung)."
 examRelevant: true
 draft: false
 ---
 
 import Figure from '../../../components/Figure.astro';
 import Table from '../../../components/Table.astro';
-import fig1 from '../../../assets/Figure_11.png';
-import fig1Dark from '../../../assets/generated/Figure_11_dark.png';
+import fig1 from '../../../assets/Figure_10.png';
+import fig1Dark from '../../../assets/generated/Figure_10_dark.png';
 import { Note } from '../../../components/MarginNote/index.js';
 
 
 ## Table of Contents
 
-1. [Das 2×2-Design](#1-das-2×2-design)
-2. [Skalenniveaus](#2-skalenniveaus)
-3. [Abhängige und unabhängige Stichproben](#3-abhängige-und-unabhängige-stichproben)
-4. [Grobstruktur statistischer Prüfverfahren](#4-grobstruktur-statistischer-prüfverfahren)
+1. [Die klassische wissenschaftliche Methode](#1-die-klassische-wissenschaftliche-methode)
+2. [Theorien und Hypothesen](#2-theorien-und-hypothesen)
+3. [Arten von Hypothesen](#3-arten-von-hypothesen)
+4. [Operationalisierung, Variablen und Design](#4-operationalisierung-variablen-und-design)
 
 ---
 
-## 1 Das 2×2-Design
+## 1 Die klassische wissenschaftliche Methode
 
 <Note>
 **Lernziele:**
-- Aufbau und Datenstruktur eines 2×2-Designs
-- Faktoren und Faktorstufen
+- Die wissenschaftliche Methode als System von Vorgehensweisen
+- Der zyklische Ablauf: Theorie → Hypothese → empirische Prüfung
 </Note>
 
-### 1.1 Aufbau
+### 1.1 Was ist die wissenschaftliche Methode?
 
-Ein **2×2-Design** ist ein faktorielles Design mit **zwei Faktoren zu je zwei Stufen**. Typisch in der Sport- und Trainingswissenschaft ist die Kombination aus einem **Gruppenfaktor** (z. B. Interventions- vs. Kontrollgruppe) und einem **Messwiederholungsfaktor** (z. B. Prä- vs. Post-Messung).
+> „Das Bestreben der Wissenschaftler, zu fundierten Aussagen über die Welt zu gelangen, die außerdem präzise und möglichst wenig fehlerbehaftet sind, hat zur Entwicklung einer Vielzahl von Vorgehensweisen, Verfahren und Techniken geführt, die in ihrer Gesamtheit als wissenschaftliche Methode bezeichnet werden. Die wissenschaftliche Methode wurde zuerst in den Naturwissenschaften angewandt …" (Sedlmeier & Renkewitz, 2008)
 
-*Schema eines 2×2-Designs (Gruppe × Zeit).*
+### 1.2 Der Erkenntniszyklus
 
-| | Prä (t₁) | Post (t₂) |
-| --- | --- | --- |
-| **Interventionsgruppe** | Zelle A | Zelle B |
-| **Kontrollgruppe** | Zelle C | Zelle D |
+Die klassische Methode verläuft **zyklisch**: Aus einer **Theorie** werden prüfbare **Hypothesen** abgeleitet; ein passendes **Design** ermöglicht die **empirische Prüfung**; die Ergebnisse führen zur Bestätigung, Modifikation oder Verwerfung der Theorie — und damit zu neuen Fragen.
 
-*Schema eines 2×2-Designs (Gruppe × Zeit).*
+*Idealtypischer Ablauf der wissenschaftlichen Methode (angelehnt an Sedlmeier & Renkewitz, 2008).*
 
-### 1.2 Was man aus dem Design lesen kann
+| Schritt | Inhalt |
+| --- | --- |
+| 1. Theorie / Vorwissen | Systematisches Gefüge von Annahmen über einen Gegenstandsbereich |
+| 2. Hypothese ableiten | Präzise, prüfbare Aussage über die Population |
+| 3. Operationalisieren | Messbarmachung der interessierenden Größen |
+| 4. Design & Datenerhebung | Versuchsplanung, Messung |
+| 5. Auswertung | Statistische Prüfung der Hypothese |
+| 6. Interpretation | Rückbezug auf Theorie, neue Fragen |
 
-Ein 2×2-Design erlaubt die Betrachtung von zwei **Haupteffekten** (Wirkung des Gruppenfaktors, Wirkung des Zeitfaktors) und einer **Interaktion** (unterscheidet sich die zeitliche Veränderung zwischen den Gruppen?). Die Interaktion ist bei Interventionsstudien meist die eigentlich interessierende Größe: Sie zeigt, ob die Intervention über den reinen Zeitverlauf hinaus wirkt.
+*Idealtypischer Ablauf der wissenschaftlichen Methode (angelehnt an Sedlmeier & Renkewitz, 2008).*
 
----
-
-## 2 Skalenniveaus
-
-<Note>
-**Lernziele:**
-- Die vier Skalenniveaus mit Sportbeispielen
-- Stetige vs. diskrete Variablen
-</Note>
-
-### 2.1 Die vier Niveaus
-
-Skalenniveaus bestimmen, welche Rechen- und Auswertungsoperationen zulässig sind (nach Stevens, 1946; Güllich & Krüger, 2013):
-
-*Die vier Skalenniveaus mit Beispielen.*
-
-| Skalenniveau | Eigenschaft | Sport-Beispiel |
-| --- | --- | --- |
-| **Nominalskala** | Kategorisieren von Merkmalen/Objekten | Fußballer:innen, Handballer:innen, Individualsportler:innen |
-| **Ordinalskala** | Rangreihe mit Zahlen versehen | Ranglistenplatz Tennis, Medaillenspiegel Olympia |
-| **Intervallskala** | Konstante Abstände zwischen Skalenwerten | Jahreszahl, Temperatur, Sprintzeit in Sekunden |
-| **Verhältnisskala** | Konstante Abstände **und** absoluter Nullpunkt | Körpergewicht in kg, Sprintleistung in m/s |
-
-*Die vier Skalenniveaus mit Beispielen.*
-
-### 2.2 Stetig vs. diskret
-
-Zusätzlich unterscheidet man **kontinuierliche (stetige)** und **diskontinuierliche (diskrete)** Variablen: Bei stetigen Variablen (z. B. Sprungweite in Zentimeter) sind in jedem Intervall unendlich viele Ausprägungen möglich; bei diskreten Variablen (z. B. Liegestütze in 40 s) nur endlich viele.
-
----
-
-## 3 Abhängige und unabhängige Stichproben
-
-<Note>
-**Lernziele:**
-- Abhängige vs. unabhängige Stichproben
-- Bezug zum 2×2-Design
-</Note>
-
-### 3.1 Definitionen
-
-- **Abhängige (verbundene) Stichproben** liegen vor, wenn sich jedem Wert der einen Stichprobe ein Wert der anderen zuordnen lässt — man hat es mit **Wertepaaren** zu tun, z. B. dieselbe Person zu zwei Zeitpunkten (Prä/Post) (Sedlmeier & Renkewitz, 2008).
-- **Unabhängige Stichproben** stammen aus zwei getrennten Populationen; die Werte der einen Stichprobe erlauben grob gesagt **keinerlei Vorhersage** über die Werte der anderen (z. B. Interventions- vs. Kontrollgruppe).
-
-### 3.2 Bezug zum Design
-
-Im 2×2-Design (Gruppe × Zeit) ist der **Zeitfaktor** typischerweise ein **Innersubjektfaktor** (abhängige Messungen: Prä/Post an denselben Personen), der **Gruppenfaktor** ein **Zwischensubjektfaktor** (unabhängige Stichproben). Diese Struktur bestimmt die Wahl des statistischen Verfahrens.
-
----
-
-## 4 Grobstruktur statistischer Prüfverfahren
-
-<Note>
-**Lernziele:**
-- Grobstruktur teststatistischer Prüfverfahren
-- Verfahrensauswahl nach Hypothesentyp, Skalenniveau und Stichprobenstruktur
-</Note>
-
-### 4.1 Auswahl nach drei Kriterien
-
-Welches teststatistische Prüfverfahren geeignet ist, hängt vor allem von drei Fragen ab (Güllich & Krüger, 2013):
-
-1. **Welche Hypothesenform?** — Unterschieds-, Zusammenhangs- oder Veränderungshypothese (vgl. Vorlesung 7).
-2. **Welches Skalenniveau** hat die abhängige Variable?
-3. **Welche Stichprobenstruktur** — abhängige oder unabhängige Stichproben, wie viele Gruppen?
-
-<Figure src={fig1} srcDark={fig1Dark} alt="Grobstruktur teststatistischer Prüfverfahren">
-Grobstruktur teststatistischer Prüfverfahren: Auswahl nach Hypothesenform, Anzahl Datensätze, Skalenniveau und Stichprobenstruktur (nach Güllich & Krüger, 2013).
+<Figure src={fig1} srcDark={fig1Dark} alt="Die wissenschaftliche Methode als iterativer Prozess">
+Die wissenschaftliche Methode als iterativer Prozess: von Beobachtung und Theorie über Fragestellung und Hypothese zu Datenerhebung, Testen und Implikationen für die Theorie (angelehnt an Sedlmeier & Renkewitz, 2008).
 </Figure>
 
-### 4.2 Orientierung für Unterschiedshypothesen
+---
 
-*Vereinfachte Orientierung für Unterschiedshypothesen bei zwei Gruppen (nach Güllich & Krüger, 2013).*
+## 2 Theorien und Hypothesen
 
-| Skalenniveau AV | Unabhängige Stichproben | Abhängige Stichproben |
+<Note>
+**Lernziele:**
+- Unterscheidung von Theorie und Hypothese
+- Ableitung von Hypothesen aus Theorien
+</Note>
+
+### 2.1 Theorie
+
+> „Eine Theorie ist ein systematisches Gefüge von Ideen und Annahmen über einen definierten Gegenstandsbereich. Die Bestandteile der Theorie sollten dabei so präzise wie möglich sein. In der Regel kann man aber eine Theorie nicht direkt prüfen, weil sie zu komplex ist. Deshalb werden aus Theorien Hypothesen abgeleitet, die in einem weiteren Schritt so präzisiert werden, dass man sie direkt in empirischen Studien überprüfen kann." (Sedlmeier & Renkewitz, 2008)
+
+### 2.2 Hypothese
+
+**Hypothesen** sind Annahmen oder Behauptungen, die man auch als Frage formulieren kann. „Empirisch" bedeutet, dass man **Daten sammelt**, die Aufschluss über die untersuchte Fragestellung geben. Hypothesen beziehen sich dabei oft nicht nur auf die Teilnehmenden einer bestimmten Studie, sondern auf die **Grundgesamtheit (Population)**, aus der diese Teilnehmenden stammen.
+
+---
+
+## 3 Arten von Hypothesen
+
+<Note>
+**Lernziele:**
+- Gerichtete vs. ungerichtete Hypothesen
+- Unterschieds-, Zusammenhangs- und Veränderungshypothesen
+</Note>
+
+### 3.1 Gerichtet vs. ungerichtet
+
+- **Ungerichtete Hypothese:** Es wird *irgendein* Unterschied, Zusammenhang oder eine Veränderung postuliert (z. B. „Die neue Trainingsmethode unterscheidet sich von der alten").
+- **Gerichtete Hypothese:** Die **Richtung** wird spezifiziert (z. B. „Die neue Methode führt zu *größeren* Leistungszuwächsen als die alte") (Güllich & Krüger, 2013).
+
+### 3.2 Drei inhaltliche Typen
+
+*Hypothesentypen mit Beispiel (nach Güllich & Krüger, 2013).*
+
+| Typ | Aussage | Beispiel |
 | --- | --- | --- |
-| metrisch (Intervall/Verhältnis), normalverteilt | t-Test für unabhängige Stichproben | t-Test für abhängige Stichproben |
-| ordinal / nicht normalverteilt | Mann-Whitney-U-Test | Wilcoxon-Vorzeichen-Rang-Test |
-| nominal | Chi-Quadrat-Test | McNemar-Test |
+| Unterschiedshypothese | Zwei/mehr Populationen unterscheiden sich in einer AV | Sportstudierende und VWL-Studierende unterscheiden sich in ihrer außeruniversitären sportlichen Aktivität |
+| Zusammenhangshypothese | Zwischen zwei/mehr Variablen besteht ein Zusammenhang | „Sportpartizipation" und „mediales Interesse an der Sportart" hängen positiv zusammen |
+| Veränderungshypothese | Eine Variable hat zu verschiedenen Zeitpunkten verschiedene Ausprägungen | Entwicklungsverlauf der Körperhöhe oder sportmotorischer Merkmale |
 
-*Vereinfachte Orientierung für Unterschiedshypothesen bei zwei Gruppen (nach Güllich & Krüger, 2013).*
+*Hypothesentypen mit Beispiel (nach Güllich & Krüger, 2013).*
 
-Bei zwei Faktoren (wie im 2×2-Design) kommen entsprechend **Varianzanalysen (ANOVA)** mit Innersubjekt- und/oder Zwischensubjektfaktoren zum Einsatz, um Haupteffekte und Interaktion zu prüfen.
+---
 
-> **Merksatz.** Erst **Hypothese und Design** festlegen (Vorlesung 7), dann **Skalenniveau und Stichprobenstruktur** bestimmen — daraus folgt das Verfahren. Nicht umgekehrt.
+## 4 Operationalisierung, Variablen und Design
 
-### 4.3 Das Konfidenzintervall
+<Note>
+**Lernziele:**
+- Operationalisierung als Messbarmachung
+- Unabhängige (UV) und abhängige (AV) Variable
+- Der Design-Begriff (Versuchsplanung)
+</Note>
 
-Ein **Konfidenzintervall (KI)** gibt einen Wertebereich an, der den unbekannten wahren Populationsparameter (z. B. eine mittlere Differenz) mit einer festgelegten Wahrscheinlichkeit — üblicherweise **95 %** — überdeckt. Anschaulich: Würde man die Studie sehr oft wiederholen, enthielten rund 95 % der so berechneten Intervalle den wahren Wert.
+### 4.1 Operationalisierung
 
-Das KI liefert mehr Information als ein bloßer p-Wert, weil es zugleich **Effektgröße** und **Präzision** (Breite des Intervalls) zeigt:
+**Operationalisierung** bedeutet **Messbarmachung**. Dabei wird festgelegt, mit welchem **Messinstrument** (z. B. Fragebogen, Kraftmessgerät) die verschiedenen Ausprägungen der interessierenden Größe (Zielparameter) quantifiziert werden.
 
-- Ein **schmales** KI spricht für eine präzise Schätzung (oft große Stichprobe).
-- Schließt das KI eines Unterschieds die **Null** ein, ist der Effekt statistisch nicht signifikant (α = 5 %).
+### 4.2 Unabhängige und abhängige Variable
 
-> **Beispiel aus einem systematischen Review.** Herbert & Gabriel (2002) berichten für die Reduktion des Muskelkaters 24 h nach dem Sport durch Dehnen lediglich **0,9 mm auf einer 100-mm-Skala (95 %-KI: −2,6 mm bis +4,4 mm)**. Da das Intervall die Null einschließt, ist der Effekt weder statistisch signifikant noch praktisch bedeutsam.
+Variablen, die im Experiment vom Versuchsleiter bewusst verändert (**manipuliert**) werden, heißen **unabhängige Variablen (UV)**. Ihre Auswirkung zeigt sich in der **abhängigen Variable (AV)**, die *gemessen* und nicht manipuliert wird. Kurz: Die **UV gehört zum Wenn-Teil**, die **AV zum Dann-Teil** einer Hypothese (Döring & Bortz, 2016; Güllich & Krüger, 2013).
 
-*Interaktives Video zur Definition: https://www.youtube.com/watch?v=n7imtsbJROo*
+> **Beispiel.** Untersucht wird, wie ein Intervalltraining die Herzfrequenz beeinflusst. Die **UV** ist das Intervalltraining (z. B. 3 × 3 min Tempolauf), die **AV** die Herzfrequenz.
+
+### 4.3 Design = Versuchsplanung
+
+„Design" bzw. „experimentelles Design" hat in der sportwissenschaftlichen Forschung eine andere Bedeutung als in der Alltagssprache: Es bedeutet **Versuchsplanung**. Das Design gibt an, wie die Studie durchgeführt werden soll, und ist im Idealfall **ausschließlich durch die Hypothese bestimmt**. **Randomisierte kontrollierte (crossover) Designs mit oder ohne Follow-up (RCT)** gelten als „Goldstandard" (vgl. Vorlesung 5).
 
 ---
 
@@ -151,26 +130,24 @@ Das KI liefert mehr Information als ein bloßer p-Wert, weil es zugleich **Effek
 <Note>
   Ein **One-Minute-Paper** ist ein kurzer, fokussierter Impuls, den Sie am Ende der Sitzung in etwa 60 Sekunden beantworten, um das Gelernte zu festigen. Formulieren Sie präzise und nutzen Sie die Terminologie dieser Sitzung.
 </Note>
-- Skizzieren Sie ein 2×2-Design für eine Trainingsstudie Ihrer Wahl und benennen Sie die beiden Faktoren.
-- Ordnen Sie „Ranglistenplatz", „Körpergewicht in kg" und „Sportart" den passenden Skalenniveaus zu.
+- Leiten Sie aus einer selbst gewählten Theorie eine präzise, prüfbare Hypothese ab und benennen Sie UV und AV.
+- Formulieren Sie zu einem Sportbeispiel je eine gerichtete und eine ungerichtete Hypothese.
 
 ---
 
-## Prüfungsrelevante Fragen (S4)
+## Prüfungsrelevante Fragen (S3)
 
-- Erklären Sie ein 2×2-Design und seine Datenstruktur.
-- Nennen und erläutern Sie die vier Skalenniveaus mit je einem Sportbeispiel.
-- Was bedeuten abhängige und unabhängige Stichproben?
-- Welche Arten von Studiendesigns existieren? (vgl. Vorlesung 5)
-- Erklären Sie die Grobstruktur teststatistischer Prüfverfahren für Unterschiedshypothesen (Güllich & Krüger, 2013, S. 35).
-- Wie ist ein Konfidenzintervall definiert?
+- Was ist die klassische wissenschaftliche Methode?
+- Was ist der Unterschied zwischen einer Theorie und einer Hypothese?
+- Was ist der Unterschied zwischen gerichteten und ungerichteten Hypothesen? Welche Hypothesenarten gibt es?
+- Was bedeutet Operationalisierung?
+- Was ist eine unabhängige, was eine abhängige Variable?
+- Was bedeutet „Design" in der Forschung?
 
 ---
 
 ## References
 
-- Stevens, S. S. (1946). On the theory of scales of measurement. *Science, 103*(2684), 677–680. doi:10.1126/science.103.2684.677
-- Güllich, A. & Krüger, M. (Hrsg.) (2013). *Sport: Das Lehrbuch für das Sportstudium.* Springer-Verlag. (insb. Kap. 2 und S. 35)
 - Sedlmeier, P. & Renkewitz, F. (2008). *Forschungsmethoden und Statistik in der Psychologie.* Pearson Studium, München.
+- Güllich, A. & Krüger, M. (Hrsg.) (2013). *Sport: Das Lehrbuch für das Sportstudium.* Springer-Verlag.
 - Döring, N. & Bortz, J. (2016). *Forschungsmethoden und Evaluation in den Sozial- und Humanwissenschaften.* Springer.
-- Herbert, R. D. & Gabriel, M. (2002). Effects of stretching before and after exercising on muscle soreness and risk of injury: systematic review. *BMJ, 325*(7362), 468. doi:10.1136/bmj.325.7362.468 *(Beispiel für Konfidenzintervalle)*

@@ -1,148 +1,120 @@
 ---
-title: "Studientypen, Studiendesigns & Evidenzlevel"
-description: "Ordnet wissenschaftliche Quellen ein: die für die Sportwissenschaft relevantesten Studientypen und ihre Design-Terminologie, die Evidenzhierarchie als Heuristik sowie die Evidenzkategorien A–D. Erläutert, warum randomisierte kontrollierte Studien als Goldstandard gelten — inklusive eines Beispiels für ein RCT mit Crossover-Design und Follow-up."
+title: "Evidenz suchen und finden: PICO & PubMed"
+description: "Übersetzt eine Fragestellung in eine beantwortbare Recherche: von der PICO-Struktur (Population, Intervention, Comparator, Outcome) über den Aufbau einer Suchstrategie in PubMed bis zum gezielten Einsatz Boolescher Operatoren (AND, OR) und der Trunkierung. Grenzt die schnelle Suche vom systematischen Review ab."
 examRelevant: true
 draft: false
 ---
 
 import Figure from '../../../components/Figure.astro';
 import Table from '../../../components/Table.astro';
-import fig1 from '../../../assets/Figure_06.png';
-import fig1Dark from '../../../assets/generated/Figure_06_dark.png';
-import fig2 from '../../../assets/Figure_07.png';
-import fig2Dark from '../../../assets/generated/Figure_07_dark.png';
-import fig3 from '../../../assets/Figure_09.png';
-import fig3Dark from '../../../assets/generated/Figure_09_dark.png';
-import fig4 from '../../../assets/Figure_08.png';
-import fig4Dark from '../../../assets/generated/Figure_08_dark.png';
 import { Note } from '../../../components/MarginNote/index.js';
 
 
 ## Table of Contents
 
-1. [Studientypen und Design-Terminologie](#1-studientypen-und-design-terminologie)
-2. [Die Evidenzhierarchie](#2-die-evidenzhierarchie)
-3. [Evidenzkategorien A–D](#3-evidenzkategorien-a–d)
-4. [Anwendung: Evidenz bewerten](#4-anwendung-evidenz-bewerten)
+1. [Von der Frage zur Evidenz](#1-von-der-frage-zur-evidenz)
+2. [Die PICO-Methode](#2-die-pico-methode)
+3. [PubMed: Zugang und Konto](#3-pubmed-zugang-und-konto)
+4. [Suchstrategie und Boolesche Operatoren](#4-suchstrategie-und-boolesche-operatoren)
 
 ---
 
-## 1 Studientypen und Design-Terminologie
+## 1 Von der Frage zur Evidenz
 
 <Note>
 **Lernziele:**
-- Die relevantesten Studientypen der Sportwissenschaft
-- Zentrale Begriffe des Studiendesigns
+- Ablauf einer schnellen (rapid) Evidenzsuche
+- Abgrenzung rapid search vs. systematisches Review
 </Note>
 
-### 1.1 Relevante Studientypen
+### 1.1 Idee der rapiden Suche
 
-In der empirischen Forschung im Bereich Sport- und Gesundheitswissenschaft finden verschiedene Studientypen Anwendung. Sie unterscheiden sich in Aussagekraft und Anfälligkeit für Verzerrungen (Bias).
+Die folgende Suchübung führt Sie vom Formulieren einer **PICO-Frage** bis zu den Schritten einer **schnellen Suche** (wenige Minuten) nach der Evidenz. Es wird jeweils *ein* PICO-Element nach dem anderen ergänzt, mit dem Ziel, auf rund **20 potenziell relevante Artikel** zu kommen.
 
-*Übersicht relevanter Studientypen (adaptiert nach Garber et al., 2011).*
+> **Wichtig.** Diese Methode ist *nicht* für ein systematisches Review gedacht — dieses würde eine deutlich umfangreichere und dokumentierte Suche erfordern.
 
-| Studientyp | Kurzcharakteristik |
-| --- | --- |
-| Randomisierte kontrollierte Studie (RCT) | Zufällige Zuteilung zu Interventions-/Kontrollgruppe; höchste interne Validität |
-| Kohortenstudie | Prospektive Beobachtung von Gruppen über die Zeit |
-| Fall-Kontroll-Studie | Rückblickender Vergleich Erkrankte vs. Nicht-Erkrankte |
-| Querschnittsstudie | Momentaufnahme zu einem Zeitpunkt |
-| Fallserie / Fallbericht | Beschreibung einzelner Fälle, keine Kontrollgruppe |
-| Systematisches Review / Metaanalyse | Systematische Zusammenfassung mehrerer Studien |
+### 1.2 Einstiegsressource
 
-*Übersicht relevanter Studientypen (adaptiert nach Garber et al., 2011).*
-
-<Figure src={fig1} srcDark={fig1Dark} alt="Studientypen und Evidenzkategorien">
-Die relevantesten Studientypen in Sport- und Gesundheitswissenschaft und ihre Evidenzkategorien A–D; die Stärke der Schlussfolgerung nimmt nach oben zu (adaptiert nach Garber et al., 2011).
-</Figure>
-
-### 1.2 Design-Terminologie
-
-Wichtige Begriffe zur Beschreibung von Designs sind u. a.: **prospektiv vs. retrospektiv**, **experimentell vs. beobachtend**, **randomisiert vs. nicht randomisiert**, **kontrolliert vs. unkontrolliert**, **crossover vs. Parallelgruppen** sowie **mit/ohne Follow-up**. Diese Begriffe präzisieren, wie eine Studie durchgeführt wurde, und bestimmen ihre Einordnung in die Evidenzhierarchie.
-
-<Figure src={fig2} srcDark={fig2Dark} alt="Studiendesign-Terminologie">
-Studiendesign-Terminologie: Repeated-measures-, Multiple-baseline-, Within-subject-, Between-subject- und 2×2-Design.
-</Figure>
+Als strukturierte Anleitung eignet sich das Tutorial des *Centre for Evidence-Based Medicine* (Oxford): „Finding the evidence: a how-to guide" — https://www.cebm.ox.ac.uk/resources/ebm-tools/finding-the-evidence-tutorial
 
 ---
 
-## 2 Die Evidenzhierarchie
+## 2 Die PICO-Methode
 
 <Note>
 **Lernziele:**
-- Die Evidenzhierarchie als Heuristik
-- RCTs und Metaanalysen als hohe Evidenzstufen
+- Die vier Komponenten von PICO
+- Formulierung einer beantwortbaren Fragestellung
 </Note>
 
-### 2.1 Evidenzlevel als Heuristik
+### 2.1 Die vier Komponenten
 
-Die **Evidenzhierarchie (Level of Evidence)** ist eine **Heuristik**, mit der die relative Stärke der Ergebnisse wissenschaftlicher Forschung bewertet wird. Über die relative Stärke epidemiologischer Großstudien besteht weitgehend Einigkeit. Grundgedanke: Je besser ein Design systematische Verzerrungen kontrolliert, desto höher die Evidenzstärke.
+**PICO** strukturiert eine beantwortbare Fragestellung in vier Bestandteile:
 
-Typischerweise stehen **systematische Reviews und Metaanalysen von RCTs** an der Spitze, gefolgt von einzelnen RCTs, Kohorten- und Fall-Kontroll-Studien, Querschnittsstudien sowie Fallserien und Expertenmeinung an der Basis.
+*Die vier Komponenten der PICO-Methode.*
 
-<Figure src={fig3} srcDark={fig3Dark} alt="Evidenzlevel für RCTs">
-Evidenzlevel für randomisierte kontrollierte Studien (nach dem Oxford Centre for Evidence-based Medicine): Level 1–4.
-</Figure>
+| Buchstabe | Bedeutung | Leitfrage |
+| --- | --- | --- |
+| **P** | Population / Problem | Wen oder welches Problem untersuche ich? |
+| **I** | Intervention / Indikator | Welche Maßnahme/Exposition betrachte ich? |
+| **C** | Comparator / Vergleich | Womit vergleiche ich (Kontrolle, Alternative)? |
+| **O** | Outcome / Zielgröße | Welches Ergebnis interessiert mich? |
 
-### 2.2 Der „Goldstandard"
+*Die vier Komponenten der PICO-Methode.*
 
-Als **Goldstandard** experimenteller Designs gelten **randomisierte kontrollierte (crossover) Studien mit oder ohne Follow-up (RCT)** — wegen der Randomisierung, die bekannte und unbekannte Störgrößen im Mittel gleichmäßig auf die Gruppen verteilt.
+### 2.2 Beispiel
 
-> **Beispiel: RCT mit Crossover-Design und Follow-up.** Untersucht wird die akute Wirkung zweier Regenerationsmaßnahmen (A = Kältebad, B = aktive Erholung) auf die Muskelregeneration. Jede:r Teilnehmer:in durchläuft **beide** Bedingungen in zufälliger Reihenfolge (*Crossover*), getrennt durch eine Auswaschphase — jede:r ist damit die eigene Kontrolle. Ein **Follow-up** nach 72 h prüft die längerfristige Wirkung. Vorteil: interindividuelle Unterschiede werden kontrolliert; Nachteil: mögliche Übertragungs-(Carry-over-)Effekte, denen die Auswaschphase entgegenwirkt.
+> **P**: erwachsene Freizeitläufer:innen · **I**: hochintensives Intervalltraining (HIIT) · **C**: kontinuierliches Ausdauertraining · **O**: Verbesserung der VO₂max
+>
+> Frage: *Verbessert HIIT im Vergleich zu kontinuierlichem Ausdauertraining die VO₂max bei erwachsenen Freizeitläufer:innen?*
 
 ---
 
-## 3 Evidenzkategorien A–D
+## 3 PubMed: Zugang und Konto
 
 <Note>
 **Lernziele:**
-- Die Evidenzkategorien A–D
-- Ein publiziertes Beispiel (Yoga & Depression)
+- PubMed als Datenbank und Kontoanlage
+- Der PubMed-User-Guide als Hilfsmittel
 </Note>
 
-### 3.1 Kategorien nach Garber et al. (2011)
+### 3.1 Was ist PubMed?
 
-Für Studien mit Bezug zur körperlichen Aktivität werden häufig die **Evidenzkategorien A–D** verwendet:
+**PubMed** ist eine große Datenbank biomedizinischer Fachzeitschriften des *National Center for Biotechnology Information (NCBI)*. PubMed ist **kostenlos** und bündelt im Kern peer-reviewte Literatur.
 
-*Evidenzkategorien A–D (nach Garber et al., 2011).*
+- PubMed: https://pubmed.ncbi.nlm.nih.gov
+- PubMed User Guide: https://pubmed.ncbi.nlm.nih.gov/help/
 
-| Kategorie | Grundlage der Evidenz |
-| --- | --- |
-| **A** | Überzeugende Evidenz aus mehreren RCTs / Metaanalysen |
-| **B** | Evidenz aus wenigen RCTs oder inkonsistenten RCTs |
-| **C** | Evidenz aus nicht randomisierten/beobachtenden Studien |
-| **D** | Expertenkonsens / Einzelfälle, geringe Evidenz |
-
-*Evidenzkategorien A–D (nach Garber et al., 2011).*
-
-<Figure src={fig4} srcDark={fig4Dark} alt="Evidenzkategorien A–D">
-Evidenzkategorien A–D mit Evidenzquellen und Definitionen (NHLBI; nach Garber et al., 2011).
-</Figure>
-
-### 3.2 Anwendungsbeispiel: Yoga & psychische Gesundheit
-
-In einem systematischen Review zu Yoga bei psychiatrischen Erkrankungen (Balasubramaniam et al., 2012) wurde etwa **Grade-B-Evidenz** für einen möglichen akuten Nutzen von Yoga bei Depression (vier RCTs) und als Ergänzung zur Pharmakotherapie bei Schizophrenie (drei RCTs) berichtet, während Ergebnisse bei kognitiven Störungen und Essstörungen widersprüchlich blieben. Das Beispiel zeigt, wie dieselbe Intervention je nach Zielgröße unterschiedlich starke Evidenz besitzen kann.
+Legen Sie ein Konto an, um Suchen zu speichern und zu verwalten.
 
 ---
 
-## 4 Anwendung: Evidenz bewerten
+## 4 Suchstrategie und Boolesche Operatoren
 
 <Note>
 **Lernziele:**
-- Peer Review und Evidenzlevel als getrennte Qualitätsdimensionen
-- Grobe Einordnung einer Studie nach Typ und Evidenzkategorie
+- Überführung einer PICO-Frage in eine Suchstrategie
+- Trunkierung sowie die Operatoren AND und OR
 </Note>
 
-### 4.1 Zwei Qualitätsdimensionen
+### 4.1 Zwei Schritte
 
-**Peer Review** sichert, dass eine Arbeit überhaupt einen fachlichen Prüfprozess durchlaufen hat (Vorlesung 3). Das **Evidenzlevel** bewertet darüber hinaus die *methodische Stärke* des Designs. Eine peer-reviewte Querschnittsstudie kann also durchaus nur Kategorie C erreichen — beide Dimensionen sind zu unterscheiden.
+- **Schritt 1 — Suchstrategie erstellen:** Zerlegen Sie die Frage anhand von **P**opulation, **I**ntervention/Indikator, **C**omparator und **O**utcome in Suchbegriffe.
+- **Schritt 2 — PICO in eine Suchanfrage übersetzen:** Kombinieren Sie die Begriffe in PubMed (http://www.ncbi.nlm.nih.gov/pubmed).
 
-### 4.2 Leitfragen zur Einordnung
+### 4.2 Nützliche Tricks
 
-- Welcher **Studientyp** liegt vor (RCT, Kohorte, Querschnitt …)?
-- Wurde **randomisiert** und **kontrolliert**?
-- Handelt es sich um eine Einzelstudie oder eine **Synthese** (Review/Metaanalyse)?
-- Welche **Evidenzkategorie (A–D)** ergibt sich daraus für die betrachtete Zielgröße?
+*Suchoperatoren und ihre Wirkung.*
+
+| Element | Funktion | Wirkung auf Treffermenge |
+| --- | --- | --- |
+| `*` (Trunkierung) | Weitere Buchstaben können an das Wort angehängt werden (z. B. `train*` → training, trained …) | erweitert |
+| **OR** | Findet Studien mit *einem* der Begriffe/Phrasen | erweitert (breiter) |
+| **AND** | Findet Studien mit *beiden* Begriffen/Phrasen | verengt (enger) |
+
+*Suchoperatoren und ihre Wirkung.*
+
+> **Faustregel.** Synonyme innerhalb eines PICO-Elements mit **OR** verbinden, die verschiedenen PICO-Elemente mit **AND** verknüpfen. So kombinieren Sie Breite (innerhalb) und Präzision (zwischen den Elementen).
 
 ---
 
@@ -150,23 +122,22 @@ In einem systematischen Review zu Yoga bei psychiatrischen Erkrankungen (Balasub
 <Note>
   Ein **One-Minute-Paper** ist ein kurzer, fokussierter Impuls, den Sie am Ende der Sitzung in etwa 60 Sekunden beantworten, um das Gelernte zu festigen. Formulieren Sie präzise und nutzen Sie die Terminologie dieser Sitzung.
 </Note>
-- Ordnen Sie folgende Designs nach Evidenzstärke: Fallbericht, RCT, Kohortenstudie, Metaanalyse von RCTs. Begründen Sie kurz.
-- Warum gilt die Randomisierung als das entscheidende Merkmal des „Goldstandards"?
+- Formulieren Sie eine eigene sportwissenschaftliche Fragestellung vollständig im PICO-Schema.
+- Erklären Sie, warum man Synonyme mit OR und die PICO-Elemente untereinander mit AND verknüpft.
 
 ---
 
 ## Prüfungsrelevante Fragen (S2)
 
-- Was sind Evidenzlevel und was bedeuten sie?
-- Welche Studientypen sind für die Sportwissenschaft besonders relevant?
-- Warum gelten RCTs als Goldstandard?
-- Erklären Sie die Evidenzkategorien A–D an einem Beispiel.
-- Worin unterscheiden sich Peer Review und Evidenzlevel als Qualitätskriterien?
+- Wofür stehen die Buchstaben P, I, C und O?
+- Wie überführt man eine PICO-Frage in eine PubMed-Suchstrategie?
+- Was bewirken die Operatoren AND und OR sowie das Trunkierungssymbol `*`?
+- Was ist PubMed, und warum ist die Datenbank für die Evidenzsuche geeignet?
 
 ---
 
 ## References
 
-- Garber, C. E., Blissmer, B., Deschenes, M. R., et al. (2011). American College of Sports Medicine position stand. Quantity and quality of exercise … *Medicine & Science in Sports & Exercise, 43*(7), 1334–1359. doi:10.1249/MSS.0b013e318213fefb
-- Balasubramaniam, M., Telles, S. & Doraiswamy, P. M. (2012). Yoga on our minds: a systematic review of yoga for neuropsychiatric disorders. *Frontiers in Psychiatry, 3*, 117.
+- Centre for Evidence-Based Medicine (Oxford). *Finding the Evidence: A How-To Guide.* https://www.cebm.ox.ac.uk/resources/ebm-tools/finding-the-evidence-tutorial
+- National Center for Biotechnology Information. *PubMed.* https://pubmed.ncbi.nlm.nih.gov
 - Güllich, A. & Krüger, M. (Hrsg.) (2013). *Sport: Das Lehrbuch für das Sportstudium.* Springer-Verlag.

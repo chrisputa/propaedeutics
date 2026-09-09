@@ -1,129 +1,176 @@
 ---
-title: "Prüfungsvorbereitung"
-description: "Format der Online-Klausur, vollständiger Fragenkatalog S1–S4 mit Zuordnung zu den acht Vorlesungen sowie die spezifische Literatur je Themenschwerpunkt."
+title: "2×2-Design & statistische Grundlagen"
+description: "Führt in Design und Statistik ein: den Aufbau eines 2×2-Designs (Haupteffekte und Interaktion), die vier Skalenniveaus mit Sportbeispielen sowie die Unterscheidung abhängiger und unabhängiger Stichproben. Erklärt die Grobstruktur teststatistischer Prüfverfahren für Unterschiedshypothesen und die Definition des Konfidenzintervalls."
 examRelevant: true
 draft: false
 ---
 
 import Figure from '../../../components/Figure.astro';
 import Table from '../../../components/Table.astro';
+import fig1 from '../../../assets/Figure_11.png';
+import fig1Dark from '../../../assets/generated/Figure_11_dark.png';
 import { Note } from '../../../components/MarginNote/index.js';
 
 
 ## Table of Contents
 
-1. [Format der Online-Klausur](#1-format-der-online-klausur)
-2. [Fragenkatalog nach Themenschwerpunkten](#2-fragenkatalog-nach-themenschwerpunkten)
-3. [Zuordnung Fragenkatalog → Vorlesungen](#3-zuordnung-fragenkatalog--vorlesungen)
-4. [Spezifische Literatur](#4-spezifische-literatur)
+1. [Das 2×2-Design](#1-das-2×2-design)
+2. [Skalenniveaus](#2-skalenniveaus)
+3. [Abhängige und unabhängige Stichproben](#3-abhängige-und-unabhängige-stichproben)
+4. [Grobstruktur statistischer Prüfverfahren](#4-grobstruktur-statistischer-prüfverfahren)
 
 ---
 
-## 1 Format der Online-Klausur
+## 1 Das 2×2-Design
 
-Die Prüfungsleistung ist eine **Online-Klausur in Moodle (60 min)**. Die Klausur kann folgende Fragentypen enthalten:
+<Note>
+**Lernziele:**
+- Aufbau und Datenstruktur eines 2×2-Designs
+- Faktoren und Faktorstufen
+</Note>
 
-- **Multiple-Choice**
-- **Freitext**
-- **Lückentext**
+### 1.1 Aufbau
 
-Zur Vorbereitung dienen die folgenden Fragen sowie die spezifische Literatur je Themenschwerpunkt (S). Sie sollten alle Fragen beantworten können.
+Ein **2×2-Design** ist ein faktorielles Design mit **zwei Faktoren zu je zwei Stufen**. Typisch in der Sport- und Trainingswissenschaft ist die Kombination aus einem **Gruppenfaktor** (z. B. Interventions- vs. Kontrollgruppe) und einem **Messwiederholungsfaktor** (z. B. Prä- vs. Post-Messung).
 
----
+*Schema eines 2×2-Designs (Gruppe × Zeit).*
 
-## 2 Fragenkatalog nach Themenschwerpunkten
-
-### Themenschwerpunkt 1 (S1) – Was meint Wissenschaftspropädeutik?
-
-1. Was meint Wissenschaftspropädeutik (Definition)?
-2. Was ist das Ziel einer Wissenschaft vom Sport?
-3. Was sind Ziele und Gegenstandsbereiche der Sportwissenschaft?
-4. Was meint Deskription und Präskription?
-5. Was bedeutet die Aussage: „Sportwissenschaft kann als praktische Wissenschaft verstanden werden"?
-6. Was sind Ziele empirischer Wissenschaften?
-7. Was bedeutet die Aussage: „Sportwissenschaft ist eine Querschnittswissenschaft"?
-
-### Themenschwerpunkt 2 (S2) – Die klassische wissenschaftliche Methode
-
-1. Was wird als „die klassische wissenschaftliche Methode" bezeichnet?
-2. Skizzieren Sie ein Schema zur Erläuterung der klassischen wissenschaftlichen Methode.
-3. Was sind Theorien, Hypothesen und Designs im Kontext der klassischen wissenschaftlichen Methode?
-4. Was kennzeichnet die „Level of Evidence"?
-5. Erläutern Sie ein Beispiel für ein RCT mit Crossover-Design und Follow-up.
-6. Wie ist die grundlegende Struktur einer wissenschaftlichen Publikation in den empirischen Wissenschaften?
-
-### Themenschwerpunkt 3 (S3) – PICO: Finding the evidence / Search strategy
-
-1. Wofür steht das Akronym „PICO"?
-2. Woher stammt das PICO-Modell?
-3. Welche charakteristischen Schritte existieren in der Anwendung der PICO-Methode?
-4. Formulieren Sie ein Beispiel für die Anwendung des PICO-Modells.
-5. Was ist eine abhängige Variable?
-6. Was ist eine unabhängige Variable?
-7. Was bedeutet Operationalisierung?
-8. Was sind gerichtete und ungerichtete Hypothesen?
-9. Was bedeutet abhängige Stichprobe?
-10. Was bedeutet unabhängige Stichprobe?
-11. Hypothesen werden hauptsächlich nach Unterschieds-, Zusammenhangs- oder Veränderungshypothesen unterschieden. Formulieren Sie je ein Beispiel bzw. passen Sie eine Hypothese entsprechend an.
-12. Wie lesen und schreiben Sie eine wissenschaftliche Publikation?
-
-### Themenschwerpunkt 4 (S4) – Study designs and basic statistics
-
-1. Erklären Sie ein 2×2-Design.
-2. Welche Arten von Studiendesigns existieren?
-3. Erklären Sie die Grobstruktur teststatistischer Prüfverfahren für Unterschiedshypothesen (Güllich & Krüger, 2013, S. 35).
-4. Wie ist ein Konfidenzintervall definiert?
-
----
-
-## 3 Zuordnung Fragenkatalog → Vorlesungen
-
-Da die acht Vorlesungen die vier Themenschwerpunkte thematisch neu bündeln, hier die Zuordnung jeder Katalogfrage zur passenden Lecture:
-
-*Mapping der Fragenkatalog-Items auf die 8 Vorlesungen.*
-
-| Katalog | Frage(n) | Behandelt in |
+| | Prä (t₁) | Post (t₂) |
 | --- | --- | --- |
-| S1 | 1 | Vorlesung 1 |
-| S1 | 2, 3, 4, 5, 6, 7 | Vorlesung 2 |
-| S2 | 1, 2, 3 | Vorlesung 7 |
-| S2 | 4, 5 | Vorlesung 5 |
-| S2 | 6 | Vorlesung 3 |
-| S3 | 1, 2, 3, 4 | Vorlesung 4 |
-| S3 | 5, 6, 7, 8, 11 | Vorlesung 7 |
-| S3 | 9, 10 | Vorlesung 8 |
-| S3 | 12 | Vorlesung 6 |
-| S4 | 1, 3, 4 | Vorlesung 8 |
-| S4 | 2 | Vorlesung 5 |
+| **Interventionsgruppe** | Zelle A | Zelle B |
+| **Kontrollgruppe** | Zelle C | Zelle D |
 
-*Mapping der Fragenkatalog-Items auf die 8 Vorlesungen.*
+*Schema eines 2×2-Designs (Gruppe × Zeit).*
 
-> **Hinweis zur Nummerierung.** Die S-Nummern im Fragenkatalog folgen einer anderen Reihenfolge als die inhaltlichen Themenschwerpunkte der Vorlesung (z. B. behandelt „S2" im Katalog die wissenschaftliche Methode, während PICO unter „S3" steht). Die obige Tabelle löst diese Zuordnung eindeutig auf.
+### 1.2 Was man aus dem Design lesen kann
+
+Ein 2×2-Design erlaubt die Betrachtung von zwei **Haupteffekten** (Wirkung des Gruppenfaktors, Wirkung des Zeitfaktors) und einer **Interaktion** (unterscheidet sich die zeitliche Veränderung zwischen den Gruppen?). Die Interaktion ist bei Interventionsstudien meist die eigentlich interessierende Größe: Sie zeigt, ob die Intervention über den reinen Zeitverlauf hinaus wirkt.
 
 ---
 
-## 4 Spezifische Literatur
+## 2 Skalenniveaus
 
-**Themenschwerpunkt 1 (S1)**
+<Note>
+**Lernziele:**
+- Die vier Skalenniveaus mit Sportbeispielen
+- Stetige vs. diskrete Variablen
+</Note>
 
-- Güllich, A. & Krüger, M. (Hrsg.) (2013). *Sport: Das Lehrbuch für das Sportstudium.* Springer-Verlag. (insb. Kap. 2)
-- Sedlmeier, P. & Renkewitz, F. (2008). *Forschungsmethoden und Statistik in der Psychologie.* Pearson Studium, München. (ergänzend, Teil 1)
+### 2.1 Die vier Niveaus
 
-**Themenschwerpunkt 2 (S2)**
+Skalenniveaus bestimmen, welche Rechen- und Auswertungsoperationen zulässig sind (nach Stevens, 1946; Güllich & Krüger, 2013):
 
-- Garber, C. E., et al. (2011). ACSM position stand. *Med Sci Sports Exerc, 43*(7), 1334–1359. (Tabellen 2 und 3)
-- Balasubramaniam, M., Telles, S. & Doraiswamy, P. M. (2012). Yoga on our minds. *Frontiers in Psychiatry, 3*, 117. (Tabellen 3 und 4)
+*Die vier Skalenniveaus mit Beispielen.*
 
-**Themenschwerpunkt 3 (S3)**
+| Skalenniveau | Eigenschaft | Sport-Beispiel |
+| --- | --- | --- |
+| **Nominalskala** | Kategorisieren von Merkmalen/Objekten | Fußballer:innen, Handballer:innen, Individualsportler:innen |
+| **Ordinalskala** | Rangreihe mit Zahlen versehen | Ranglistenplatz Tennis, Medaillenspiegel Olympia |
+| **Intervallskala** | Konstante Abstände zwischen Skalenwerten | Jahreszahl, Temperatur, Sprintzeit in Sekunden |
+| **Verhältnisskala** | Konstante Abstände **und** absoluter Nullpunkt | Körpergewicht in kg, Sprintleistung in m/s |
 
-- Güllich, A. & Krüger, M. (Hrsg.) (2013), insb. Kap. 2
-- Centre for Evidence-Based Medicine: https://www.cebm.net
-- Herbert, R. D. & Gabriel, M. (2002). Effects of stretching before and after exercising on muscle soreness and risk of injury: systematic review. *BMJ, 325*(7362), 468. doi:10.1136/bmj.325.7362.468
-- Materne, O., et al. (2020). Injury incidence and burden in a youth elite football academy: a four-season prospective study of 551 players. *Br J Sports Med.* doi:10.1136/bjsports-2020-102859
-- *How to read a scientific paper*: https://www.science.org/content/article/how-seriously-read-scientific-paper
-- *How to write a scientific paper* (FSU-Cloud): https://cloud.uni-jena.de/s/Y6rSFZGCREKT5Mm
+*Die vier Skalenniveaus mit Beispielen.*
 
-**Themenschwerpunkt 4 (S4)**
+### 2.2 Stetig vs. diskret
 
-- Güllich, A. & Krüger, M. (Hrsg.) (2013), insb. Kap. 2 und S. 35
-- Konfidenzintervall (Video): https://www.youtube.com/watch?v=n7imtsbJROo
+Zusätzlich unterscheidet man **kontinuierliche (stetige)** und **diskontinuierliche (diskrete)** Variablen: Bei stetigen Variablen (z. B. Sprungweite in Zentimeter) sind in jedem Intervall unendlich viele Ausprägungen möglich; bei diskreten Variablen (z. B. Liegestütze in 40 s) nur endlich viele.
+
+---
+
+## 3 Abhängige und unabhängige Stichproben
+
+<Note>
+**Lernziele:**
+- Abhängige vs. unabhängige Stichproben
+- Bezug zum 2×2-Design
+</Note>
+
+### 3.1 Definitionen
+
+- **Abhängige (verbundene) Stichproben** liegen vor, wenn sich jedem Wert der einen Stichprobe ein Wert der anderen zuordnen lässt — man hat es mit **Wertepaaren** zu tun, z. B. dieselbe Person zu zwei Zeitpunkten (Prä/Post) (Sedlmeier & Renkewitz, 2008).
+- **Unabhängige Stichproben** stammen aus zwei getrennten Populationen; die Werte der einen Stichprobe erlauben grob gesagt **keinerlei Vorhersage** über die Werte der anderen (z. B. Interventions- vs. Kontrollgruppe).
+
+### 3.2 Bezug zum Design
+
+Im 2×2-Design (Gruppe × Zeit) ist der **Zeitfaktor** typischerweise ein **Innersubjektfaktor** (abhängige Messungen: Prä/Post an denselben Personen), der **Gruppenfaktor** ein **Zwischensubjektfaktor** (unabhängige Stichproben). Diese Struktur bestimmt die Wahl des statistischen Verfahrens.
+
+---
+
+## 4 Grobstruktur statistischer Prüfverfahren
+
+<Note>
+**Lernziele:**
+- Grobstruktur teststatistischer Prüfverfahren
+- Verfahrensauswahl nach Hypothesentyp, Skalenniveau und Stichprobenstruktur
+</Note>
+
+### 4.1 Auswahl nach drei Kriterien
+
+Welches teststatistische Prüfverfahren geeignet ist, hängt vor allem von drei Fragen ab (Güllich & Krüger, 2013):
+
+1. **Welche Hypothesenform?** — Unterschieds-, Zusammenhangs- oder Veränderungshypothese (vgl. Vorlesung 7).
+2. **Welches Skalenniveau** hat die abhängige Variable?
+3. **Welche Stichprobenstruktur** — abhängige oder unabhängige Stichproben, wie viele Gruppen?
+
+<Figure src={fig1} srcDark={fig1Dark} alt="Grobstruktur teststatistischer Prüfverfahren">
+Grobstruktur teststatistischer Prüfverfahren: Auswahl nach Hypothesenform, Anzahl Datensätze, Skalenniveau und Stichprobenstruktur (nach Güllich & Krüger, 2013).
+</Figure>
+
+### 4.2 Orientierung für Unterschiedshypothesen
+
+*Vereinfachte Orientierung für Unterschiedshypothesen bei zwei Gruppen (nach Güllich & Krüger, 2013).*
+
+| Skalenniveau AV | Unabhängige Stichproben | Abhängige Stichproben |
+| --- | --- | --- |
+| metrisch (Intervall/Verhältnis), normalverteilt | t-Test für unabhängige Stichproben | t-Test für abhängige Stichproben |
+| ordinal / nicht normalverteilt | Mann-Whitney-U-Test | Wilcoxon-Vorzeichen-Rang-Test |
+| nominal | Chi-Quadrat-Test | McNemar-Test |
+
+*Vereinfachte Orientierung für Unterschiedshypothesen bei zwei Gruppen (nach Güllich & Krüger, 2013).*
+
+Bei zwei Faktoren (wie im 2×2-Design) kommen entsprechend **Varianzanalysen (ANOVA)** mit Innersubjekt- und/oder Zwischensubjektfaktoren zum Einsatz, um Haupteffekte und Interaktion zu prüfen.
+
+> **Merksatz.** Erst **Hypothese und Design** festlegen (Vorlesung 7), dann **Skalenniveau und Stichprobenstruktur** bestimmen — daraus folgt das Verfahren. Nicht umgekehrt.
+
+### 4.3 Das Konfidenzintervall
+
+Ein **Konfidenzintervall (KI)** gibt einen Wertebereich an, der den unbekannten wahren Populationsparameter (z. B. eine mittlere Differenz) mit einer festgelegten Wahrscheinlichkeit — üblicherweise **95 %** — überdeckt. Anschaulich: Würde man die Studie sehr oft wiederholen, enthielten rund 95 % der so berechneten Intervalle den wahren Wert.
+
+Das KI liefert mehr Information als ein bloßer p-Wert, weil es zugleich **Effektgröße** und **Präzision** (Breite des Intervalls) zeigt:
+
+- Ein **schmales** KI spricht für eine präzise Schätzung (oft große Stichprobe).
+- Schließt das KI eines Unterschieds die **Null** ein, ist der Effekt statistisch nicht signifikant (α = 5 %).
+
+> **Beispiel aus einem systematischen Review.** Herbert & Gabriel (2002) berichten für die Reduktion des Muskelkaters 24 h nach dem Sport durch Dehnen lediglich **0,9 mm auf einer 100-mm-Skala (95 %-KI: −2,6 mm bis +4,4 mm)**. Da das Intervall die Null einschließt, ist der Effekt weder statistisch signifikant noch praktisch bedeutsam.
+
+*Interaktives Video zur Definition: https://www.youtube.com/watch?v=n7imtsbJROo*
+
+---
+
+## One-Minute-Paper Topics
+<Note>
+  Ein **One-Minute-Paper** ist ein kurzer, fokussierter Impuls, den Sie am Ende der Sitzung in etwa 60 Sekunden beantworten, um das Gelernte zu festigen. Formulieren Sie präzise und nutzen Sie die Terminologie dieser Sitzung.
+</Note>
+- Skizzieren Sie ein 2×2-Design für eine Trainingsstudie Ihrer Wahl und benennen Sie die beiden Faktoren.
+- Ordnen Sie „Ranglistenplatz", „Körpergewicht in kg" und „Sportart" den passenden Skalenniveaus zu.
+
+---
+
+## Prüfungsrelevante Fragen (S4)
+
+- Erklären Sie ein 2×2-Design und seine Datenstruktur.
+- Nennen und erläutern Sie die vier Skalenniveaus mit je einem Sportbeispiel.
+- Was bedeuten abhängige und unabhängige Stichproben?
+- Welche Arten von Studiendesigns existieren? (vgl. Vorlesung 5)
+- Erklären Sie die Grobstruktur teststatistischer Prüfverfahren für Unterschiedshypothesen (Güllich & Krüger, 2013, S. 35).
+- Wie ist ein Konfidenzintervall definiert?
+
+---
+
+## References
+
+- Stevens, S. S. (1946). On the theory of scales of measurement. *Science, 103*(2684), 677–680. doi:10.1126/science.103.2684.677
+- Güllich, A. & Krüger, M. (Hrsg.) (2013). *Sport: Das Lehrbuch für das Sportstudium.* Springer-Verlag. (insb. Kap. 2 und S. 35)
+- Sedlmeier, P. & Renkewitz, F. (2008). *Forschungsmethoden und Statistik in der Psychologie.* Pearson Studium, München.
+- Döring, N. & Bortz, J. (2016). *Forschungsmethoden und Evaluation in den Sozial- und Humanwissenschaften.* Springer.
+- Herbert, R. D. & Gabriel, M. (2002). Effects of stretching before and after exercising on muscle soreness and risk of injury: systematic review. *BMJ, 325*(7362), 468. doi:10.1136/bmj.325.7362.468 *(Beispiel für Konfidenzintervalle)*
